@@ -1,0 +1,34 @@
+:root{
+  --bg:#fff8f2; /* pale warm */
+  --card:#fff;
+  --text:#3a2b20;
+  --muted:#6b5346;
+  --accent:#ff7a18; /* orange */
+  --accent-strong:#ff5e00;
+  --shadow: 0 10px 30px rgba(50,30,10,0.12);
+}
+*{box-sizing:border-box}
+html,body,#app{height:100%}
+body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,var(--bg),#fff); color:var(--text);}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid rgba(0,0,0,0.04);background:linear-gradient(90deg, rgba(255,122,24,0.06), transparent)}
+.brand{font-weight:700;color:var(--accent-strong)}
+.controls button{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px 10px;border-radius:8px;margin-left:6px;font-size:16px;cursor:pointer}
+.stage{display:flex;align-items:center;justify-content:center;padding:24px}
+.slide{width:960px;max-width:100%;height:600px;max-height:80vh;background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:40px;display:flex;flex-direction:column;justify-content:space-between}
+@media (max-width:600px){
+  .slide{padding:20px;height:auto;min-height:60vh;border-radius:10px}
+}
+.slide h1{margin:0 0 12px;font-size:28px;color:var(--accent-strong)}
+.slide h2{margin:0 0 10px;font-size:18px;color:var(--text)}
+.slide .content{flex:1;overflow:auto;padding-right:6px}
+.slide ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.5}
+.slide .note{margin-top:18px;padding:12px;border-radius:8px;background:linear-gradient(90deg, rgba(255,122,24,0.06), rgba(255,122,24,0.02));color:var(--accent-strong);font-weight:600;display:none}
+.slide .time{font-size:14px;color:var(--muted);margin-top:6px}
+.footer{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-top:1px solid rgba(0,0,0,0.04)}
+.progress{flex:1;height:8px;background:rgba(0,0,0,0.04);border-radius:999px;margin-right:12px;overflow:hidden}
+.progressBar{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-strong))}
+.meta{display:flex;align-items:center;gap:12px}
+.notesBtn{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px 10px;border-radius:8px;cursor:pointer}
+.small{font-size:13px;color:var(--muted)}
+/* decorative accent strip */
+.slide::before{content:'';position:absolute;left:0;right:0;height:6px;border-top-left-radius:12px;border-top-right-radius:12px;pointer-events:none;background:linear-gradient(90deg,var(--accent),transparent);opacity:0.06}
